@@ -1,0 +1,228 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+
+    font-size: 62.5%;
+
+    --ff-primary: "Roboto", sans-serif;
+
+    --bg-app: #000000;
+
+    --text-color-button: #FFFFFF;
+    --text-color-button-hover: #065E7C;
+    --text-color-table: #E1E1E6;
+    --text-color-placeholder: #7C7C8A;
+    --text-color-remove: #F75A68;
+
+    --stroke-table: #4A808C;
+
+    --bg-input: #06181C;
+    --bg-button: #065E7C;
+    --bg-button-hover: #FFFFFF;
+    --bg-header-table: #092D38;
+    --bg-row-50: hsla(195, 61%, 6%, 50%);
+    --bg-row-100: #06181C;
+}
+
+body{
+    font-size: 1.6rem;
+    background: var(--bg-app);
+    color: var(--text-color-table);
+}
+
+body *{
+    font-family: var(--ff-primary);
+}
+
+.sr-only{ /* pra acessibilidade*/
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden; /* o overflow serve para que o conteudo nao transborde da caixa, ou seja ele fica dentro do w e h de 1px, ficando invisivel praticamente */
+    clip: rect(0,0,0,0); /*cria um rectangulo pequetito para ter ctz que o conteudo fique onde queremos*/
+    white-space: nowrap; /*nowrap faz que nao haja a quebra de linha do texto*/
+    border-width: 0;
+}
+
+#app{
+    padding: 2rem;
+    max-width: 1120px;
+    
+    margin: 0 auto;
+}
+
+.table-wrapper{
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.table-wrapper::-webkit-scrollbar{
+    width: .6rem
+}
+
+.table-wrapper::-webkit-scrollbar-thumb{
+    background-color: var(--stroke-table);
+    border-radius: 1rem;
+    
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin: 1.5em 0 8.7rem 0;
+}
+
+
+.search{
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+}
+
+.search input{
+    width: 46.2rem;
+    padding: 1.6rem;
+    
+    font-family: "Roboto", sans-serif;
+    font-weight: normal;
+    font-size: 1.4rem;
+    color: var(--text-color-placeholder);
+
+    border-radius: .5rem;
+    background-color: var(--bg-input);
+    border: 1px solid var(--bg-input);
+}
+
+.search button{
+
+    padding: 1.2rem 3.2rem;
+    
+    background-color: var(--bg-button);
+    border-radius: .5rem;
+    border: 1px solid var(--bg-button);
+
+    color: var(--text-color-button);
+    font-size: 1.4rem;
+    line-height: 21px;
+    text-transform: uppercase;
+
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+.search button span{
+    font-size: 2.4rem;
+}
+
+.search button:hover{
+    color: var(--text-color-button-hover);
+    background-color: var(--bg-button-hover);
+    border: 1px solid var(--bg-button-hover);
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    
+}
+
+
+
+table *{
+    font-size: 2rem;
+    color: var(--text-color-table);
+    
+}
+
+table th{
+    background: var(--bg-header-table);
+    text-align: left;
+    font-weight: bold;
+    padding: 1.6rem 4rem;
+    
+}
+
+table th:first-child{
+    border-top-left-radius: .8rem;
+    
+}
+
+table th:last-child{
+    border-top-right-radius: .8rem;
+}
+
+
+table tr:nth-child(odd){
+    background: var(--bg-row-50);
+}
+
+table tr:nth-child(even){
+    background: var(--bg-row-100)
+}
+
+
+table td{
+    padding: 4rem;
+    text-align: left;
+}
+
+
+
+.no-user{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6rem;
+}
+
+.no-user h1{
+    font-size: 4rem;
+    line-height: 24.8px;
+    color: #4E5455;
+    font-family: "Roboto Mono", monospace;
+    font-weight: bold;
+}
+
+td.user{
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+}
+
+
+
+td.user img{
+    width: 5rem;
+    height: 5rem;
+
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+td.user a{
+    text-decoration: none;
+}
+
+td.user a p{
+    font-weight: bold;
+}
+
+td .remove {
+    background: none;
+    border: none;
+    
+    color: red;
+    cursor: pointer;
+}
+
