@@ -194,6 +194,10 @@ table td{
     font-weight: bold;
 }
 
+.hide{
+    display: none;
+}
+
 td.user{
     display: flex;
     align-items: center;

@@ -53,7 +53,9 @@ export class Favorites {
         this.save()
 
         if (this.entries[length] == undefined) {
-            this.noUser()
+           content.classList.remove('hide')
+        } else {
+            content.classList.add('hide')
         }
     }
 }
@@ -83,6 +85,13 @@ export class FavoritesView extends Favorites {
     update() {
            
         this.removeAllTr()
+        const content = document.querySelector('.teste')
+
+        if (this.entries[length] == undefined) {
+            content.classList.remove('hide')
+         } else {
+             content.classList.add('hide')
+         }
     
         this.entries.forEach(user => {
             const row = this.createRow()
@@ -129,21 +138,7 @@ export class FavoritesView extends Favorites {
         return tr
     }
 
-    noUser() {
-        const noUsertr = document.createElement('tr')
 
-        noUsertr.innerHTML = `
-
-        <td colspan="4">
-        <div class="no-user">
-            <img src="./assets/bigstar.svg" alt="oooooooooooo star">
-            <h1>Nenhum favorito ainda</h1>
-        </div>
-    </td>`
-
-        this.tbody.append(noUsertr)
-    
-    }
 
     removeAllTr() {
 
